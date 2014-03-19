@@ -1,19 +1,24 @@
 $(function(){
 	$('#overlay').on('click', function(e){
-						if (e.target.tagName != 'INPUT' && e.target.tagName != 'TEXTAREA') {
-							$('#contact-form').animate({ marginTop : '-725px' }, 300)
-							$(this).fadeOut(300)
-							$('body').css('overflow', 'visible')
-						}
-					}),
+		if (e.target.tagName != 'INPUT' && e.target.tagName != 'TEXTAREA') {
+			$('#contact-form').animate({ marginTop : '-725px' }, 300)
+			$(this).fadeOut(300)
+			$('body').css('overflow', 'visible')
+		}
+	}),
+	$('#submit').on('click', function(e){
+		$('#contact-form').animate({ marginTop : '-725px' }, 300)
+		$('#overlay').fadeOut(300)
+		$('body').css('overflow', 'visible')
+	}),
 	$('body').on('keydown', function(e){
-					if ((e.keyCode || e.which) == 27)
-				    {
-				    	$('#contact-form').animate({ marginTop : '-725px' })
-				        $('#overlay').fadeOut(300)
-				        $('body').css('overflow', 'visible')
-				    }
-				})
+		if ((e.keyCode || e.which) == 27)
+	    {
+	    	$('#contact-form').animate({ marginTop : '-725px' })
+	        $('#overlay').fadeOut(300)
+	        $('body').css('overflow', 'visible')
+	    }
+		})
 
 	function contactResize () {
 		var screenHeight = $(window).innerHeight(),
