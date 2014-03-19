@@ -1,12 +1,12 @@
 $(function(){
-	var clickOut = $('#overlay').on('click', function(e){
+	$('#overlay').on('click', function(e){
 						if (e.target.tagName != 'INPUT' && e.target.tagName != 'TEXTAREA') {
 							$('#contact-form').animate({ marginTop : '-725px' }, 300)
 							$(this).fadeOut(300)
 							$('body').css('overflow', 'visible')
 						}
 					}),
-		escOut = $('body').on('keydown', function(e){
+	$('body').on('keydown', function(e){
 					if ((e.keyCode || e.which) == 27)
 				    {
 				    	$('#contact-form').animate({ marginTop : '-725px' })
@@ -36,8 +36,6 @@ $(function(){
 		$('#overlay').fadeIn(150)
 		$('#contact-form').animate({ marginTop : '0px' })
 		$('body').css('overflow', 'hidden')
-		clickOut()
-		escOut()
 	})
 
 	$('.language-options li button').on('click', function(){
